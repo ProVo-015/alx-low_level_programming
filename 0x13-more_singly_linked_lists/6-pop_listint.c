@@ -7,18 +7,18 @@
  * Return: the data inside the elements that was deleted,
  * or 0 if the list is empty
  */
-int pop_listint(listint_t **head)
+int pop_listint(listint_t **brain)
 {
-	listint_t *mine;
+	listint_t *temp;
 	int num;
 
-	if (!head || !*head)
+	if (!brain || !*brain)
 		return (0);
 
-	num = (*head)->n;
-	mine = (*head)->next;
-	free(*head);
-	*head = temp;
+	num = (*brain)->n;
+	temp = (*brain)->next;
+	free(*brain);
+	*brain = temp;
 
 	return (num);
 }
