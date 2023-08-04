@@ -1,17 +1,20 @@
 #include "main.h"
 
 /**
- * clear_bit - set the value of a given bit to 0
- * @b: pointer to the number to change
- * @index: index of the bit to clear
+ * get_bit - returns the value of a bit at an index in a decimal number
+ * @n: number to search
+ * @index: index of the bit
  *
- * Return: 1 for success, -1 for failure
+ * Return: value of the bit
  */
-int clear_bit(unsigned long int *b, unsigned int index)
+int get_bit(unsigned long int n, unsigned int index)
 {
+	int bit_val;
+
 	if (index > 63)
 		return (-1);
 
-	*n = (~(1UL << index) & *b);
-	return (1);
+	bit_val = (n >> index) & 1;
+
+	return (bit_val);
 }
